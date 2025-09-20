@@ -1,108 +1,59 @@
-# 📘 CORD-19 Data Explorer
 
-This project is part of the **Python Frameworks Assignment**. It analyzes the [CORD-19 research dataset](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) and builds a simple **Streamlit web application** to explore COVID-19 related research papers.
+# Report on CORD-19 Data Exploration
 
----
+## 1. Overview
 
-## 🚀 Features
+This project involved exploring the **CORD-19 metadata dataset** using Python and building an interactive web app with **Streamlit**. The goal was to gain insights into publication patterns related to COVID-19 research and provide an easy way to filter and visualize the data.
 
-* Load and clean real-world research metadata (`metadata.csv`)
-* Handle missing values and extract useful features (e.g., publication year)
-* Perform basic analysis:
+The workflow included:
 
-  * Number of publications per year
-  * Top journals publishing COVID-19 research
-  * Sample view of paper titles, authors, and journals
-* Visualize insights with **Matplotlib** and **Seaborn**
-* Interactive **Streamlit application**
+* Loading and cleaning the dataset (`metadata.csv`).
+* Performing exploratory data analysis (EDA) with Pandas, Matplotlib, and Seaborn.
+* Creating visualizations such as publication trends and top journals.
+* Building a Streamlit app for interactive exploration.
 
 ---
 
-## 🛠️ Installation & Setup
+## 2. Findings
 
-### 1. Clone this repository
+### a) Publications by Year
 
-```bash
-git clone https://github.com/Goofy-collab/Frameworks_Assignment.git
-cd Frameworks_Assignment
-```
+* The dataset contains research papers spanning multiple years.
+* Publications significantly increased around **2020–2021**, corresponding to the outbreak and global spread of COVID-19.
+* The trend shows a research surge in pandemic years compared to earlier years.
 
-### 2. Create a virtual environment
+### b) Top Journals
 
-```bash
-python -m venv venv
-```
+* Journals such as *Respiratory Research*, *BMC Infectious Diseases*, and *Journal of Virology* published a high volume of COVID-19 related work.
+* This highlights key outlets where pandemic-related research was concentrated.
 
-### 3. Activate the environment
+### c) Common Words in Titles
 
-* On Windows (PowerShell):
-
-  ```bash
-  venv\Scripts\activate
-  ```
-* On macOS/Linux:
-
-  ```bash
-  source venv/bin/activate
-  ```
-
-### 4. Install dependencies
-
-```bash
-pip install pandas matplotlib seaborn streamlit
-```
-
-### 5. Add dataset
-
-Download the dataset from Kaggle and place **`metadata.csv`** inside the project folder.
-⚠️ Do **not** push `metadata.csv` to GitHub (it’s large). Add this to `.gitignore`.
+* Frequent words include *COVID*, *infection*, *respiratory*, *coronavirus*, and *SARS*.
+* These reflect the dominant research themes and areas of focus in the dataset.
 
 ---
 
-## ▶️ Run the Analysis
+## 3. Challenges
 
-### Jupyter Notebook Exploration
+* **Large dataset size (1M+ rows):**
+  Handling the metadata required attention to performance and memory usage.
 
-```bash
-jupyter notebook analysis.ipynb
-```
+* **Missing and inconsistent values:**
+  Many fields (e.g., `doi`, `pmcid`, `journal`) had null entries, requiring cleaning and filtering.
 
-### Streamlit App
+* **Mixed data types:**
+  Several columns had mixed string/number types, leading to `DtypeWarning` during import. This required setting `low_memory=False` and casting types carefully.
 
-```bash
-streamlit run app.py
-```
-
-Then open the link in your browser (usually [http://localhost:8501](http://localhost:8501)).
+* **Visualization warnings:**
+  Seaborn issued deprecation warnings for `palette` usage without `hue`, requiring updated syntax in future work.
 
 ---
 
-## 📊 Findings
+## 4. Learning Outcomes
 
-* **Publications spiked in 2020–2021** due to the COVID-19 pandemic.
-* Top journals included **The BMJ, PLOS ONE, Journal of Virology**.
-* The dataset is large (\~1M rows) but provides valuable insights into global research activity.
-
----
-
-## 📝 Reflection
-
-* Learned how to handle **large datasets** with pandas.
-* Faced challenges with file permissions and dataset extraction but solved them by organizing files correctly.
-* Built an **interactive Streamlit app** for the first time.
-* Gained practical skills in **data cleaning, visualization, and web-based presentation**.
-
----
-
-## 📂 Project Structure
-
-```
-Frameworks_Assignment/
-│-- analysis.ipynb   # Jupyter notebook with data exploration
-│-- app.py           # Streamlit app
-│-- README.md        # Documentation
-│-- .gitignore       # Ignore metadata.csv and other large files
-```
-
----
+* Improved understanding of **data cleaning** (handling missing values, parsing dates, type conversions).
+* Learned how to use **Pandas and Seaborn** for efficient exploratory data analysis.
+* Gained experience building an **interactive app with Streamlit**, including sliders, charts, and dynamic filtering.
+* Practiced **Git and GitHub workflows** for version control and project documentation.
 
