@@ -46,7 +46,7 @@ Frameworks_Assignment/
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/Goofy-collab/Frameworks_Assignment.git
    cd Frameworks_Assignment
    ```
 
