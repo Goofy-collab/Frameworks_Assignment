@@ -36,7 +36,9 @@ Frameworks_Assignment/
 ├── app.py               # Streamlit app for interactive exploration
 ├── metadata.csv         # Dataset (not pushed to GitHub if too large)
 ├── README.md            # Documentation and report
-└── venv/                # Virtual environment (excluded from Git)
+├── gitignore           # Ignore metadata.csv and other large files
+└── venv/                # Virtual environment (excluded from Git
+
 ```
 
 ---
